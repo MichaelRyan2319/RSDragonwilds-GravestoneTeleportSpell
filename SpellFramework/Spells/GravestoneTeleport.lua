@@ -1,6 +1,6 @@
 -- Gravestone Teleport: takes you to your gravestone, the spot where you last died.
--- Nothing is cast when you have no gravestone in this world.
--- It costs no runes on purpose: when you die, your runes are in the gravestone.
+-- Nothing is cast (and no runes are used) when you have no gravestone in this world.
+-- (Dying empties your hotbar and Items tab into the gravestone; you keep your runes.)
 --
 -- The teleport is the game's own (the one Home Teleport and the lodestones use), so the
 -- world around the gravestone is loaded before you arrive.
@@ -99,10 +99,10 @@ end
 return {
     id = "gravestone_teleport",
     name = "Gravestone Teleport",
-    description = "Teleports you to your gravestone, where you last died. Costs no runes: yours are in the gravestone.",
+    description = "Teleports you to your gravestone, where you last died. With several gravestones, the newest.",
     icon = "/Game/Art/UI/Icons/Icons_0_10_02/T_Icon_Gravestone",
     base = "HomeTeleport",
-    cost = {},
+    cost = { Law = 5 },
     cooldown = 10,
     castTime = CAST_POINT,
     animation = "manual",   -- look for a gravestone first; the cast animation only plays if there is one
@@ -140,7 +140,7 @@ return {
                 sf.Toast(NO_GRAVESTONE)
                 return
             end
-            if GoTo(sf, caster, target) then ctx.Pay() end   -- no runes; starts the cooldown
+            if GoTo(sf, caster, target) then ctx.Pay() end   -- takes the runes, starts the cooldown
         end)
     end,
 }

@@ -8,12 +8,12 @@ It adds one spell to the Spellbook, under **Custom Spells**:
 
 | Spell | What it does | Runes | Cooldown |
 | --- | --- | --- | --- |
-| **Gravestone Teleport** | Teleports you to your newest gravestone in this world. You arrive 1.5 m from it, facing it. | none | 10 s |
+| **Gravestone Teleport** | Teleports you to your newest gravestone in this world. You arrive 1.5 m from it, facing it. | 5 Law | 10 s |
 
-- It costs no runes on purpose. When you die your runes are in the gravestone,
-  so a rune cost would stop you casting it exactly when you need it.
-- Nothing is cast, and no cooldown starts, when you have no gravestone or are
-  already standing at it.
+- You can cast it right after dying: death empties your hotbar and Items tab
+  into the gravestone, and you keep your runes.
+- Nothing is cast, no runes are used and no cooldown starts when you have no
+  gravestone or are already standing at it.
 - The teleport is the game's own (the one Home Teleport and the lodestones
   use), with its loading screen, so the world around the gravestone is loaded
   before you arrive.
@@ -29,8 +29,8 @@ It adds one spell to the Spellbook, under **Custom Spells**:
 - [UE4SS for RuneScape: Dragonwilds](https://github.com/MichaelRyan2319/RSDragonwilds-UE4SS)
 - [Spell Framework](https://github.com/MichaelRyan2319/RSDragonwilds-SpellFramework).
   With 2.0.0 or later the spell checks for a gravestone before anything
-  happens. With an older version the cast animation plays first, and you are
-  told afterwards if there is no gravestone.
+  happens. With an older version the cast animation plays and the runes are
+  used first, and you are told afterwards if there is no gravestone.
 
 ## Install with Mod Loader
 
@@ -69,8 +69,9 @@ keeps it up to date.
 
 The numbers are at the top of the spell file: how far from the gravestone you
 arrive (`LAND_BESIDE`), and the moment in the animation at which you leave
-(`CAST_POINT`). The cooldown is the `cooldown` line further down. An update
-replaces the file, so change them again after an update.
+(`CAST_POINT`). The rune cost and the cooldown are the `cost` and `cooldown`
+lines further down (`cost = {}` makes it free). An update replaces the file,
+so change them again after an update.
 
 ## Uninstall
 
