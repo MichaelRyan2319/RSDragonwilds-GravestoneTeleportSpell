@@ -1,0 +1,6 @@
+{
+  "requires": [
+    {"repo": "MichaelRyan2319/RSDragonwilds-UE4SS", "name": "UE4SS"},
+    {"repo": "MichaelRyan2319/RSDragonwilds-SpellFramework", "name": "Spell Framework"}
+  ]
+}
