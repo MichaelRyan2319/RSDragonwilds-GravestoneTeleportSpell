@@ -30,7 +30,9 @@ It adds one spell to the Spellbook, under **Custom Spells**:
 - [Spell Framework](https://github.com/MichaelRyan2319/RSDragonwilds-SpellFramework).
   With 2.0.0 or later the spell checks for a gravestone before anything
   happens. With an older version the cast animation plays and the runes are
-  used first, and you are told afterwards if there is no gravestone.
+  used first, and you are told afterwards if there is no gravestone. Older
+  versions also leave Home Teleport's requirement on the spell (it borrows that
+  spell's cast), so there it needs a claimed bed.
 
 ## Install with Mod Loader
 
